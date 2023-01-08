@@ -10,13 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { MainAppComponent } from './main-app/main-app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'main-app', component: MainAppComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-];
+import { TrendingComponent } from './components/trending/trending.component';
+import { WeeklyTopComponent } from './components/weekly-top/weekly-top.component';
+import { RecentComponent } from './components/recent/recent.component';
+import { WhatYouLoveComponent } from './components/what-you-love/what-you-love.component';
+import { ForYouComponent } from './components/for-you/for-you.component';
+import { SingleContentComponent } from './pages/single-content/single-content.component';
+import { ContainerComponent } from './pages/container/container.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +26,15 @@ const appRoutes: Routes = [
     MainAppComponent,
     HeaderComponent,
     FooterComponent,
+    TrendingComponent,
+    WeeklyTopComponent,
+    RecentComponent,
+    WhatYouLoveComponent,
+    ForYouComponent,
+    SingleContentComponent,
+    ContainerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

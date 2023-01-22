@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-what-you-love',
@@ -7,9 +8,76 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhatYouLoveComponent implements OnInit {
 
-  constructor() { }
+  @Input() data= {
+    rightSideData: [
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      }
+      , {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      }
+    ],
+    bottomData: [
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      },
+      {
+        img: "assets/img/trending/right1.jpg",
+        text: "Welcome To The Best Model Winner Contest",
+        hashTag: "Concert"
+      }
+    ],
+    mainData:  {
+      img: "assets/img/trending/right1.jpg",
+      text: "Welcome To The Best Model Winner Contest",
+      hashTag: "Concert"
+    }
+  }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
+  }
+
+  gotoContent(data:any){
+    console.log(data);
+    this.router.navigate(['news'])
   }
 
 }

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.what-img-small img {
+    height: 250px;
+}
+
+.what-img-big img {
+    height: 400px;
+}

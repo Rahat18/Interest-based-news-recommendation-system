@@ -21,12 +21,12 @@
                                     <div class="row">
                                         <div (click)="gotoContent(news)" *ngFor="let news of data" class="col-lg-6 col-md-6">
                                             <div class="single-what-news mb-100">
-                                                <div class="what-img">
-                                                    <img [src]="news.img" alt="">
+                                                <div class="what-img what-img-big">
+                                                    <img [src]="news?.otherDetails?.media[0]?.url" alt="">
                                                 </div>
                                                 <div class="what-cap">
-                                                    <span class="color1">{{news.hashTag}}</span>
-                                                    <h4><a href="#">{{news.text}}</a>
+                                                    <span class="color1">{{news?.hashTagStr | uppercase}}</span>
+                                                    <h4 class="news-head" ><a>{{news?.title}}</a>
                                                     </h4>
                                                 </div>
                                             </div>

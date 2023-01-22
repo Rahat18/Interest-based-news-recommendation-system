@@ -17,6 +17,11 @@ import { WhatYouLoveComponent } from './components/what-you-love/what-you-love.c
 import { ForYouComponent } from './components/for-you/for-you.component';
 import { SingleContentComponent } from './pages/single-content/single-content.component';
 import { ContainerComponent } from './pages/container/container.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgZorroAntdModule } from './ng-antd.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { TokenInterceptorService } from './utils/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,8 +39,15 @@ import { ContainerComponent } from './pages/container/container.component';
     SingleContentComponent,
     ContainerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgZorroAntdModule],
+  providers: [  {
+    // provide: LocationStrategy, useClass: HashLocationStrategy
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+  },
+  { provide: LocationStrategy, useClass: HashLocationStrategy },
+  { provide: NZ_I18N, useValue: en_US },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

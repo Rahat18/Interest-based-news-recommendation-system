@@ -1,22 +1,22 @@
 <br/>
-<main>
+<main *ngIf="data">
     <!--   what you love start -->
-    <app-what-you-love></app-what-you-love>
+    <app-what-you-love  [data]="data?.trending" ></app-what-you-love>
     <!-- End Weekly-News -->
     <!-- Whats New Start -->
-    <app-for-you></app-for-you>
+    <app-for-you  *ngIf="data?.forYou?.length" [data]="data?.forYou" ></app-for-you>
     <!-- Whats New End -->
     <!-- Trending Area Start -->
-    <app-trending></app-trending>
+    <app-trending *ngIf="data?.latest?.length" [data]="data?.latest" ></app-trending>
     <!-- Trending Area End -->
 
 
 
     <!--   Weekly-News start -->
-    <app-weekly-top></app-weekly-top>
+    <app-weekly-top  *ngIf="data?.weeklyTop?.length" [data]="data?.weeklyTop" ></app-weekly-top>
     <!-- End Weekly-News -->
     <!--  Recent Articles start -->
-    <app-recent></app-recent>
+    <app-recent  *ngIf="data?.recent?.length" [data]="data?.recent"></app-recent>
     <!--Recent Articles End -->
 
 </main>

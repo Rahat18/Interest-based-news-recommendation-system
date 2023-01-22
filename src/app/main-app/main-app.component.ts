@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-main-app',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainAppComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private commonService:CommonService) { }
+  data:any ;
   ngOnInit(): void {
+    this.commonService.getHomePageNews().subscribe((res:any) => {
+      if(res.status){
+        this.data = res.data
+      }
+    })
   }
 
 }

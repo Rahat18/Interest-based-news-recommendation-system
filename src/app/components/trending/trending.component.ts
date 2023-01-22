@@ -8,36 +8,26 @@ import { Router } from '@angular/router';
 })
 export class TrendingComponent implements OnInit {
 
-  @Input() data = [{
-    img: 'assets/img/news/weekly2News1.jpg',
-    text: 'Welcome To The Best Model Winner Contest',
-    hashtag: 'Corporate'
-  },
-  {
-    img: 'assets/img/news/weekly2News1.jpg',
-    text: 'Welcome To The Best Model Winner Contest',
-    hashtag: 'Corporate'
-  },{
-    img: 'assets/img/news/weekly2News1.jpg',
-    text: 'Welcome To The Best Model Winner Contest',
-    hashtag: 'Corporate'
-  },{
-    img: 'assets/img/news/weekly2News1.jpg',
-    text: 'Welcome To The Best Model Winner Contest',
-    hashtag: 'Corporate'
-  }
-,{
-  img: 'assets/img/news/weekly2News1.jpg',
-  text: 'Welcome To The Best Model Winner Contest',
-  hashtag: 'Corporate'
-}];
+  @Input() data:any = []
   constructor(private router:Router) { }
-
   ngOnInit(): void {
+  
+    this.data = this.data.map((val:any) => {
+      return { ...val , title:  this.replaceStartingDash(val.title.replaceAll("#","" )), hashTagStr: val.hashTags.join(" , ").replaceAll("#", "")}
+
+    })
+
   }
-  gotoContent(data:any){
-    console.log(data);
-    this.router.navigate(['news'])
+  replaceStartingDash(title:string){
+    if(title[0] === '-'){
+      return title.slice(1,title.length -1);
+    }else {
+      return title
+    }
   }
 
+  gotoContent(data:any){
+   
+    this.router.navigate(['news', data._id])
+  }
 }

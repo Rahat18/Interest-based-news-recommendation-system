@@ -12,7 +12,7 @@ const routes: Routes = [
     component: ContainerComponent,
     children: [
       { path: '', component: MainAppComponent },
-      { path: 'news', component: SingleContentComponent },
+      { path: 'news/:id', component: SingleContentComponent },
     ],
   },
   { path: 'login', component: LoginComponent },

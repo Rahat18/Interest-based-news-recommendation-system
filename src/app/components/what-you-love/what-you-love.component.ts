@@ -8,76 +8,45 @@ import { Router } from '@angular/router';
 })
 export class WhatYouLoveComponent implements OnInit {
 
-  @Input() data= {
-    rightSideData: [
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      }
-      , {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      }
-    ],
-    bottomData: [
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      },
-      {
-        img: "assets/img/trending/right1.jpg",
-        text: "Welcome To The Best Model Winner Contest",
-        hashTag: "Concert"
-      }
-    ],
-    mainData:  {
-      img: "assets/img/trending/right1.jpg",
-      text: "Welcome To The Best Model Winner Contest",
-      hashTag: "Concert"
-    }
-  }
+  @Input() data: any = []
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    
+    let rightData:any = [];
+    let mainData ={};
+    let bottomData:any = [];
+
+    this.data.forEach((val:any, i:number) => {
+      if(i=== 0){
+        mainData = { ...val , title:  this.replaceStartingDash(val.title.replaceAll("#","" )), hashTagStr: val.hashTags.join(" , ").replaceAll("#", "")};
+      }else if( i < 4){
+        bottomData.push({ ...val , title:  this.replaceStartingDash(val.title.replaceAll("#","" )), hashTagStr: val.hashTags.join(" , ").replaceAll("#", "")})
+      }else {
+        rightData.push({ ...val , title:  this.replaceStartingDash(val.title.replaceAll("#","" )), hashTagStr: val.hashTags.join(" , ").replaceAll("#", "")})
+      }
+    })
+
+
+    this.data = {
+      rightSideData: rightData,
+      bottomData: bottomData,
+      mainData: mainData
+    }
+
   }
 
+  replaceStartingDash(title:string){
+    if(title[0] === '-'){
+      return title.slice(1,title.length -1);
+    }else {
+      return title
+    }
+  }
+
+
   gotoContent(data:any){
-    console.log(data);
-    this.router.navigate(['news'])
+
+    this.router.navigate(['news', data._id])
   }
 
 }

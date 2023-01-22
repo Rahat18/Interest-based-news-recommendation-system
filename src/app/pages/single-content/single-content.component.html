@@ -4,56 +4,19 @@
             <div class="col-lg-8 posts-list">
                 <div class="single-post">
                     <div class="feature-img">
-                        <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
+                        <img  class="img-fluid" [src]="data?.otherDetails?.media[0]?.url" alt="">
                     </div>
                     <div class="blog_details">
-                        <h2>Second divided from form fish beast made every of seas
-                            all gathered us saying he our
-                        </h2>
+                     
                         <ul class="blog-info-link mt-3 mb-4">
-                            <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                            <li><a><i class="fa fa-user"></i>{{data?.hashTagStr | uppercase}}</a></li>
+                            
                         </ul>
                         <p class="excert">
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower
+                            {{data?.title}}
                         </p>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually
-                        </p>
-                        <div class="quote-wrapper">
-                            <div class="quotes">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you
-                                should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at
-                                a fraction of the camp price. However, who has the willpower to actually sit through a
-                                self-imposed MCSE training.
-                            </div>
-                        </div>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower
-                        </p>
-                        <p>
-                            MCSE boot camps have its supporters and its detractors. Some people do not understand why
-                            you
-                            should have to spend money on boot camp when you can get the MCSE study materials yourself
-                            at a
-                            fraction of the camp price. However, who has the willpower to actually sit through a
-                            self-imposed MCSE training. who has the willpower to actually
-                        </p>
+                      
+                    
                     </div>
                 </div>
 
@@ -65,42 +28,16 @@
 
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Recent Post</h3>
-                        <div class="media post_item">
-                            <img src="assets/img/post/post_1.png" alt="post">
+                        <div *ngFor="let news of recentNews" class="media post_item">
+                            <img [src]="news?.otherDetails?.media[0]?.url" alt="post">
                             <div class="media-body">
                                 <a href="single-blog.html">
-                                    <h3>From life was you fish...</h3>
+                                    <h3 class="news-head text-data" >{{news?.title}}</h3>
                                 </a>
-                                <p>January 12, 2019</p>
+                                <p>{{news?.createdAt | date}}</p>
                             </div>
                         </div>
-                        <div class="media post_item">
-                            <img src="assets/img/post/post_2.png" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>The Amazing Hubble</h3>
-                                </a>
-                                <p>02 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="assets/img/post/post_3.png" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>Astronomy Or Astrology</h3>
-                                </a>
-                                <p>03 Hours ago</p>
-                            </div>
-                        </div>
-                        <div class="media post_item">
-                            <img src="assets/img/post/post_4.png" alt="post">
-                            <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3>Asteroids telescope</h3>
-                                </a>
-                                <p>01 Hours ago</p>
-                            </div>
-                        </div>
+                      
                     </aside>
 
 

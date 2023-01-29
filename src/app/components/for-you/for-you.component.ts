@@ -21,9 +21,9 @@ export class ForYouComponent implements OnInit {
 
   replaceStartingDash(title:string){
     if(title[0] === '-'){
-      return title.slice(1,title.length -1);
+      return title.slice(1,title.length -1).replaceAll(/(?:https?|ftp):\/\/[\n\S]+/g, '');
     }else {
-      return title
+      return title.replaceAll(/(?:https?|ftp):\/\/[\n\S]+/g, '');;
     }
   }
 

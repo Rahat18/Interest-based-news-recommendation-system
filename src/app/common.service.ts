@@ -19,5 +19,19 @@ export class CommonService {
     return this.http.post(this.baseUrl + '/news/get-single-news', data)
   }
 
+  getNews(data:any){
+    return this.http.post(this.baseUrl + '/news/get-news', data);
+  }
+
+  getLinks(link:string){
+
+    return this.http.get(link);
+  }
+
+  getLinksText(link:string){
+
+    return this.http.get(link, {responseType: 'text'});
+  }
+
 
 }

@@ -22,6 +22,7 @@ import { NgZorroAntdModule } from './ng-antd.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import { TokenInterceptorService } from './utils/token-interceptor.service';
+import { SearchNewsComponent } from './pages/search-news/search-news.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TokenInterceptorService } from './utils/token-interceptor.service';
     ForYouComponent,
     SingleContentComponent,
     ContainerComponent,
+    SearchNewsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgZorroAntdModule],
   providers: [  {

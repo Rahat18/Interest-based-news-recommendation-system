@@ -26,7 +26,7 @@
                             <img [src]="data.mainData?.otherDetails?.media[0]?.url" alt="">
                             <div class="trend-top-cap">
                                 <span>{{data.mainData.hashTagStr | uppercase}}</span>
-                                <h2 class="main-title news-head"><a>{{data.mainData.title}}</a></h2>
+                                <h2 class="main-title news-head"><a  [innerHTML]="data?.mainData?.title"></a></h2>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color1">{{data.hashTagStr | uppercase}}</span>
-                                        <h4 class="news-head"><a>{{data.title}}</a></h4>
+                                        <h4 class="news-head"><a [innerHTML]="data.title" ></a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="trand-right-cap">
                             <span class="color1">{{data.hashTagStr | uppercase}}</span>
-                            <h4 class="main-title-right news-head"><a>{{data.title}}</a></h4>
+                            <h4 class="main-title-right news-head"><a  [innerHTML]="data?.title"></a></h4>
                         </div>
                     </div>
                

@@ -29,7 +29,7 @@
                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div> -->
                             <!-- Main-menu -->
-                            <div class="main-menu d-none d-md-block">
+                            <div class="main-menu  d-md-block">
                                 <nav>
                                     <ul id="navigation">
                                         <li routerLink="/" ><a >Home</a></li>
@@ -41,18 +41,25 @@
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-4">
                             <div class="header-right-btn f-right d-none d-lg-block">
-                                <i class="fas fa-search special-tag"></i>
-                                <div class="search-box">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search">
-
-                                    </form>
-                                </div>
+                                <nz-input-group [nzSuffix]="suffixIconSearch">
+                                    <input type="text" (keydown.enter)="searchData(search.value)" #search  nz-input placeholder="Search" />
+                                  </nz-input-group>
+                                  <ng-template #suffixIconSearch>
+                                    <span nz-icon nzType="search"></span>
+                                  </ng-template> 
                             </div>
                         </div>
                         <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-md-none"></div>
+                        <div class="col-12 ">
+                            <div class="header-right-btn d-block d-md-none container">
+                                <nz-input-group [nzSuffix]="suffixIconSearch">
+                                    <input type="text" (keydown.enter)="searchData(searchMob.value)" #searchMob  nz-input placeholder="Search" />
+                                  </nz-input-group>
+                                  <ng-template #suffixIconSearch>
+                                    <span nz-icon nzType="search"></span>
+                                  </ng-template> 
+                            </div>
+                            <br/>
                         </div>
                     </div>
                 </div>

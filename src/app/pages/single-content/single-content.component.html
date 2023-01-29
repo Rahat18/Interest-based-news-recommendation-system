@@ -6,16 +6,31 @@
                     <div class="feature-img">
                         <img  class="img-fluid" [src]="data?.otherDetails?.media[0]?.url" alt="">
                     </div>
+                    <div *ngFor="let image of data?.otherDetails?.media;let i=index" class="feature-img">
+                        <img  *ngIf="i !==0" class="img-fluid" [src]="image?.url" alt="">
+                    </div>
                     <div class="blog_details">
                      
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><a><i class="fa fa-user"></i>{{data?.hashTagStr | uppercase}}</a></li>
                             
                         </ul>
-                        <p class="excert">
-                            {{data?.title}}
+                        <p [innerHTML]="data?.title" class="excert">
+                           
                         </p>
-                      
+                        <div class="row">
+                     <div  (click)="openLink(link)" *ngFor="let link of allLinks" class="col-md-4">
+                        <nz-card nzHoverable style="width:100%" [nzCover]="coverTemplate">
+                            <nz-card-meta [nzTitle]="link?.title" [nzDescription]="link.description"></nz-card-meta>
+                          </nz-card>
+                          <ng-template #coverTemplate>
+                            <img [alt]="link?.url" [src]="link?.image" />
+                          </ng-template>
+                        </div>
+
+                    </div>
+                        <!-- <ngx-link-preview   *ngFor="let link of allLinks" [parseForLinksStr]="link"  [getApiEndpoint$]="apiCallbackFn" [apiRoute]="baseUrl"   ></ngx-link-preview> -->
+                     
                     
                     </div>
                 </div>
@@ -28,11 +43,11 @@
 
                     <aside class="single_sidebar_widget popular_post_widget">
                         <h3 class="widget_title">Recent Post</h3>
-                        <div *ngFor="let news of recentNews" class="media post_item">
+                        <div  (click)="gotoContent(news)" *ngFor="let news of recentNews" class="media post_item">
                             <img [src]="news?.otherDetails?.media[0]?.url" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html">
-                                    <h3 class="news-head text-data" >{{news?.title}}</h3>
+                                <a >
+                                    <h3 class="news-head text-data" [innerHtml]="news?.title" ></h3>
                                 </a>
                                 <p>{{news?.createdAt | date}}</p>
                             </div>

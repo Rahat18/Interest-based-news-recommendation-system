@@ -72,26 +72,26 @@ export class APIService {
   }
 
   public get loggedIn(): boolean {
-    return localStorage.getItem('game-token') !== null;
+    return localStorage.getItem('token') !== null;
   }
 
   public get token(): string {
-    return localStorage.getItem('game-token') || '';
+    return localStorage.getItem('token') || '';
   }
 
   public get userData(): object {
-    return JSON.parse(localStorage.getItem('game-user') || '');
+    return JSON.parse(localStorage.getItem('user') || '');
   }
 
   setUserData(user: any) {
     user.name = this.capitalize(`${user.firstName} ${user.lastName}`);
-    localStorage.setItem('game-user', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
     window.location.reload();
   }
 
   logout() {
-    localStorage.removeItem('game-token');
-    localStorage.removeItem('game-user');
-    this.router.navigate(['/landing']);
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
   }
 }

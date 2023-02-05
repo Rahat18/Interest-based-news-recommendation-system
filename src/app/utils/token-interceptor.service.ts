@@ -30,7 +30,7 @@ export class TokenInterceptorService {
     }
 
     //GET TOKEN
-    const authToken = localStorage.getItem('game-token');
+    const authToken = localStorage.getItem('token');
 
     //SET TOKEN
     const authRequest = req.clone({

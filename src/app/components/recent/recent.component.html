@@ -22,7 +22,7 @@
                                         <div (click)="gotoContent(news)" *ngFor="let news of data" class="col-md-3 col-sm-6">
                                             <div class="single-what-news mb-100">
                                                 <div class="what-img what-img-small">
-                                                    <img [src]="news?.otherDetails?.media[0]?.url" alt="">
+                                                    <img [src]="news?.otherDetails?.media[0]?.url  ||  news?.otherDetails?.media[0]?.preview_image_url" alt="">
                                                 </div>
                                                 <div class="what-cap">
                                                     <span class="color1">{{news?.hashTagStr | uppercase}}</span>

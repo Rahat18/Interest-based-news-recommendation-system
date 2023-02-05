@@ -24,8 +24,15 @@
     .main-title-right{
         width: 250px;
     }
+    .trend-top-img {
+    max-height: 100%;
+}
 }
 
+
+.trend-top-img {
+    max-height: 500px;
+}
 
 
 .trend-bottom-img img{

@@ -23,7 +23,7 @@
                     <!-- Trending Top -->
                     <div (click)="gotoContent(data.mainData)" class="trending-top mb-30">
                         <div class="trend-top-img">
-                            <img [src]="data.mainData?.otherDetails?.media[0]?.url" alt="">
+                            <img [src]="data.mainData?.otherDetails?.media[0]?.url ||  data.mainData?.otherDetails?.media[0]?.preview_image_url" alt="">
                             <div class="trend-top-cap">
                                 <span>{{data.mainData.hashTagStr | uppercase}}</span>
                                 <h2 class="main-title news-head"><a  [innerHTML]="data?.mainData?.title"></a></h2>
@@ -36,7 +36,7 @@
                             <div  (click)="gotoContent(data)" *ngFor="let data of data.bottomData" class="col-lg-4">
                                 <div class="single-bottom mb-35">
                                     <div class="trend-bottom-img mb-30">
-                                        <img [src]="data?.otherDetails?.media[0]?.url" alt="">
+                                        <img [src]="data?.otherDetails?.media[0]?.url || data?.otherDetails?.media[0]?.preview_image_url" alt="">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color1">{{data.hashTagStr | uppercase}}</span>
@@ -52,7 +52,7 @@
                 <div class="col-lg-4">
                     <div  (click)="gotoContent(data)"  *ngFor="let data of data.rightSideData" class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img [src]="data?.otherDetails?.media[0]?.url" alt="">
+                            <img [src]="data?.otherDetails?.media[0]?.url || data?.otherDetails?.media[0]?.preview_image_url" alt="">
                         </div>
                         <div class="trand-right-cap">
                             <span class="color1">{{data.hashTagStr | uppercase}}</span>

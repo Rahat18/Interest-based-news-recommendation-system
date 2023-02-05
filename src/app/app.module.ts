@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { RouterModule, Routes } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 import { MainAppComponent } from './main-app/main-app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -41,7 +41,7 @@ import { SearchNewsComponent } from './pages/search-news/search-news.component';
     ContainerComponent,
     SearchNewsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgZorroAntdModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgZorroAntdModule, BrowserAnimationsModule],
   providers: [  {
     // provide: LocationStrategy, useClass: HashLocationStrategy
     provide: HTTP_INTERCEPTORS,

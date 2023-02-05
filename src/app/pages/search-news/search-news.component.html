@@ -9,7 +9,7 @@
             <h4  nz-typography [innerHTML]="link?.title"></h4>
           </nz-card>
           <ng-template #coverTemplate>
-            <img style="height:300px" [alt]="'Cover'" [src]="link?.otherDetails?.media[0]?.url" />
+            <img style="height:300px" [alt]="'Cover'" [src]="link?.otherDetails?.media[0]?.url ||  link?.otherDetails?.media[0]?.preview_image_url" />
           </ng-template>
         </div>
 

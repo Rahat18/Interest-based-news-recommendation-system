@@ -33,5 +33,15 @@ export class CommonService {
     return this.http.get(link, {responseType: 'text'});
   }
 
+  login(data:any){
+    return this.http.post(this.baseUrl + '/user/login',  data)
+  }
 
+  getAllInterests() {
+    return this.http.get(this.baseUrl + '/interests/get-interests')
+  }
+
+  signup(data:any){
+   return this.http.post(this.baseUrl + '/user/create-user', data)
+  }
 }

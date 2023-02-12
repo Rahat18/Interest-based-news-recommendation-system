@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://localhost:4000/v1/api"
+  baseUrl: "https://http-nodejs-production-dfb7.up.railway.app"
 };
 
 /*

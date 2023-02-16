@@ -1,36 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 .what-img-small img {
-    height: 250px;
+  height: 250px;
 }
 
 .what-img-big img {
-    height: 400px;
+  height: 400px;
 }
 
 .spinner {
-    cursor: wait;
-    background-color: hsla(187, 95%, 84%, 0.3);
-    z-index: 9999999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .spinner > img {
-    width: 10rem;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  }
-  
-  img {
-    object-fit: cover;
-  }
+  cursor: wait;
+  background-color: hsla(187, 95%, 84%, 0.3);
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner>img {
+  width: 10rem;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+img {
+  object-fit: cover;
+}

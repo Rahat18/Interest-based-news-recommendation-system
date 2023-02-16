@@ -1,16 +1,18 @@
-.trand-right-img img{
- max-width: 100px;
+.trand-right-img img {
+    max-width: 100px;
 }
 
 .main-title {
     width: 600px;
     color: white;
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     .main-title {
         width: 300px;
     }
-    .main-title-right{
+
+    .main-title-right {
         width: 200px;
     }
 }
@@ -21,12 +23,14 @@
     .main-title {
         width: 600px;
     }
-    .main-title-right{
+
+    .main-title-right {
         width: 250px;
     }
+
     .trend-top-img {
-    max-height: 100%;
-}
+        max-height: 100%;
+    }
 }
 
 
@@ -35,6 +39,6 @@
 }
 
 
-.trend-bottom-img img{
+.trend-bottom-img img {
     height: 165px;
 }

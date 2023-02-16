@@ -1,0 +1,44 @@
+.trand-right-img img {
+    max-width: 100px;
+}
+
+.main-title {
+    width: 600px;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-title {
+        width: 300px;
+    }
+
+    .main-title-right {
+        width: 200px;
+    }
+}
+
+
+
+@media only screen and (min-width: 992px) {
+    .main-title {
+        width: 600px;
+    }
+
+    .main-title-right {
+        width: 250px;
+    }
+
+    .trend-top-img {
+        max-height: 100%;
+    }
+}
+
+
+.trend-top-img {
+    max-height: 500px;
+}
+
+
+.trend-bottom-img img {
+    height: 165px;
+}

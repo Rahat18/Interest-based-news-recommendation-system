@@ -8,11 +8,11 @@ import { CommonService } from '../common.service';
 })
 export class MainAppComponent implements OnInit {
 
-  constructor(private commonService:CommonService) { }
-  data:any ;
+  constructor(private commonService: CommonService) { }
+  data: any;
   ngOnInit(): void {
-    this.commonService.getHomePageNews().subscribe((res:any) => {
-      if(res.status){
+    this.commonService.getHomePageNews().subscribe((res: any) => {
+      if (res.status) {
         this.data = res.data
       }
     })

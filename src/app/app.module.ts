@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -42,7 +42,7 @@ import { SearchNewsComponent } from './pages/search-news/search-news.component';
     SearchNewsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgZorroAntdModule, BrowserAnimationsModule],
-  providers: [  {
+  providers: [{
     // provide: LocationStrategy, useClass: HashLocationStrategy
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
@@ -52,4 +52,4 @@ import { SearchNewsComponent } from './pages/search-news/search-news.component';
   { provide: NZ_I18N, useValue: en_US },],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

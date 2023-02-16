@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService} from './utils/api.service'
+import { APIService } from './utils/api.service'
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,19 @@ import {APIService} from './utils/api.service'
 })
 export class AppComponent implements OnInit {
   title = 'FinalYearProject';
-  spinSubscription:any;
-  spinner =false;
-  constructor(private control: APIService){}
+  spinSubscription: any;
+  spinner = true;
+  constructor(private control: APIService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.spinSubscription = this.control.getSpinner().subscribe((res) => {
-      this.spinner = res;
-    
+      setTimeout(() => {
+
+        this.spinner = res;
+
+      })
     });
-    
+
   }
-  
+
 }

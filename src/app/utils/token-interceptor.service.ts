@@ -9,7 +9,7 @@ import { throwError } from 'rxjs/internal/observable/throwError';
   providedIn: 'root',
 })
 export class TokenInterceptorService {
-  constructor(private control: APIService) {}
+  constructor(private control: APIService) { }
 
   private stack: number[] = [];
 
@@ -24,6 +24,7 @@ export class TokenInterceptorService {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
+
     if (!req.params.get('scroll')) {
       this.control.spin(true);
       this.stack.push(1);

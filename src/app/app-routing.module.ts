@@ -5,6 +5,7 @@ import { MainAppComponent } from './main-app/main-app.component';
 import { ContainerComponent } from './pages/container/container.component';
 import { SearchNewsComponent } from './pages/search-news/search-news.component';
 import { SingleContentComponent } from './pages/single-content/single-content.component';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
       { path: '', component: MainAppComponent },
       { path: 'news/:id', component: SingleContentComponent },
       { path: 'search', component: SearchNewsComponent },
+      { path: 'update-user', component: UpdateUserComponent },
+
+
     ],
   },
   { path: 'login', component: LoginComponent },
@@ -25,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

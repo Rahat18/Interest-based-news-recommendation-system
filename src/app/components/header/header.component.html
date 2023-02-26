@@ -31,41 +31,72 @@
                             <!-- Main-menu -->
                             <div class="main-menu  d-md-block">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li routerLink="/" ><a >Home</a></li>
-                                        <li ><div *ngIf="!user" class="d-md-none  col-12"><u><a style="color:blue;" [routerLink]="'/login'">Login/Signup</a></u> </div></li>
-                                            <li > <div *ngIf="user"  class="d-md-none  col-12">Welcome {{user?.name}} <u><a (click)="onLogout()" style="color:blue">Logout</a></u></div></li>
-                 <!-- <li><a href="categori.html">Category</a></li> -->
+                                    <ul style="    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;" id="navigation">
+                                        <li routerLink="/"><a style="padding-right: 110px;">Home</a></li>
+                                        <li>
+                                            <div *ngIf="!user" class="d-md-none  col-12"><u><a style="color:blue;"
+                                                        [routerLink]="'/login'">Login/Signup</a></u> </div>
+                                        </li>
+                                        <li>
+                                            <div *ngIf="user" class="d-md-none  row">
+                                                <div class="col-md-12">
+
+                                                    Welcome {{user?.name}}
+                                                </div>
+
+
+                                                <div class="col-md-6">
+                                                    <a (click)="onLogout()"
+                                                        style="color:blue;padding:0px"><u>Logout</u></a>&nbsp; &nbsp;<a
+                                                        routerLink="/update-user"
+                                                        style="color:blue;padding:0px">Profile</a>
+                                                </div>
+
+
+
+                                            </div>
+                                        </li>
+                                        <!-- <li><a href="categori.html">Category</a></li> -->
 
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div *ngIf="!user"  class="d-none d-lg-block col-xl-2 col-lg-2 col-md-4"><u><a style="color:blue;" [routerLink]="'/login'">Login/Signup</a></u> </div>
-                        <div *ngIf="user"  class="d-none d-lg-block col-xl-2 col-lg-2 col-md-4">Welcome {{user?.name}} <u><a (click)="onLogout()" style="color:blue">Logout</a></u></div>
+                        <div *ngIf="!user" class="d-none d-lg-block col-xl-2 col-lg-2 col-md-4"><u><a
+                                    style="color:blue;" [routerLink]="'/login'">Login/Signup</a></u> </div>
+                        <div *ngIf="user" routerLink="/update-user"
+                            class="d-none d-lg-block col-xl-2 col-lg-2 col-md-4">
+                            Welcome {{user?.name}} <br /> <u><a (click)="onLogout()" style="color:blue">Logout</a></u>
+                            &nbsp;
+                            &nbsp; <u routerLink="/update-user"><a style="color:blue">Profile</a></u>
+                        </div>
 
                         <div class="col-xl-3 col-lg-3 col-md-4">
                             <div class="header-right-btn f-right d-none d-lg-block">
                                 <nz-input-group [nzSuffix]="suffixIconSearch">
-                                    <input type="text" (keydown.enter)="searchData(search.value)" #search  nz-input placeholder="Search" />
-                                  </nz-input-group>
-                                  <ng-template #suffixIconSearch>
+                                    <input type="text" (keydown.enter)="searchData(search.value)" #search nz-input
+                                        placeholder="Search" />
+                                </nz-input-group>
+                                <ng-template #suffixIconSearch>
                                     <span nz-icon nzType="search"></span>
-                                  </ng-template> 
+                                </ng-template>
                             </div>
                         </div>
                         <!-- Mobile Menu -->
-                  
+
                         <div class="col-12 ">
                             <div class="header-right-btn d-block d-md-none container">
                                 <nz-input-group [nzSuffix]="suffixIconSearch">
-                                    <input type="text" (keydown.enter)="searchData(searchMob.value)" #searchMob  nz-input placeholder="Search" />
-                                  </nz-input-group>
-                                  <ng-template #suffixIconSearch>
+                                    <input type="text" (keydown.enter)="searchData(searchMob.value)" #searchMob nz-input
+                                        placeholder="Search" />
+                                </nz-input-group>
+                                <ng-template #suffixIconSearch>
                                     <span nz-icon nzType="search"></span>
-                                  </ng-template> 
+                                </ng-template>
                             </div>
-                            <br/>
+                            <br />
                         </div>
                     </div>
                 </div>

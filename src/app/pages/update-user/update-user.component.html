@@ -1,0 +1,80 @@
+<br />
+<br />
+
+
+<div class="row" style="margin-right: 0px;">
+
+    <div class="col-md-6 col-sm-12">
+        <h3 style="padding-left: 40px;" nz-typography>General Details</h3>
+        <form nz-form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="name">Name</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <input required nz-input name="name" [ngModel]="user?.name" type="text" id="name">
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <input nz-input disabled [ngModel]="user?.emailId" name="emailId" type="email" id="email">
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="interests">Interests</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <nz-select required name="interests" [(ngModel)]="user.interests" [nzSize]="'default'"
+                        nzMode="multiple" nzPlaceHolder="Please select your interests">
+                        <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label"
+                            [nzValue]="option.value"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-lg">Update</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-sm-12">
+
+        <h3 style="padding-left: 40px;" nz-typography>Update Password</h3>
+        <form nz-form (ngSubmit)="onSubmitPass(form2)" #form2="ngForm">
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="oldPass">Old Password</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <input required nz-input name="oldPassword" ngModel type="password" id="oldPass">
+                </nz-form-control>
+            </nz-form-item>
+
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="newPass">New Password</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <input required nz-input name="newPassword" #newPass
+                        (ngModelChange)="verifyPass(newPass.value, confirmPass.value)" ngModel type="password"
+                        id="newPass">
+
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="confirmPass">Confirm New Password</nz-form-label>
+                <nz-form-control [nzSpan]="14">
+                    <input required nz-input name="confirmPassword"
+                        (ngModelChange)="verifyPass(newPass.value, confirmPass.value)" #confirmPass ngModel
+                        type="password" id="confirmPass">
+
+                </nz-form-control>
+            </nz-form-item>
+            <div *ngIf="!passValid && confirmPass.value.length && newPass.value.length"
+                class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <label style="color: red;">Passwords
+                    Do Not Match. Please
+                    Check Your Password!</label>
+            </div>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button type="submit" [disabled]="!form2.valid" class="btn btn-primary btn-lg">Update Password</button>
+            </div>
+        </form>
+    </div>
+
+</div>

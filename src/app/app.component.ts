@@ -9,7 +9,7 @@ import { APIService } from './utils/api.service'
 export class AppComponent implements OnInit {
   title = 'FinalYearProject';
   spinSubscription: any;
-  spinner = true;
+  spinner = false;
   constructor(private control: APIService) { }
 
   ngOnInit() {

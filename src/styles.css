@@ -34,3 +34,7 @@
 img {
   object-fit: cover;
 }
+
+.main-header .main-menu ul li a {
+  display: inline-block !important;
+}

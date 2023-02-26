@@ -1,47 +1,55 @@
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
- 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
   baseUrl = environment.baseUrl
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-  getHomePageNews(){
+  getHomePageNews() {
     return this.http.get(this.baseUrl + '/news/get-news-home')
   }
 
-  getSingleData(data:any) {
+  getSingleData(data: any) {
     return this.http.post(this.baseUrl + '/news/get-single-news', data)
   }
 
-  getNews(data:any){
+  getNews(data: any) {
     return this.http.post(this.baseUrl + '/news/get-news', data);
   }
 
-  getLinks(link:string){
+  getLinks(link: string) {
 
     return this.http.get(link);
   }
 
-  getLinksText(link:string){
+  getLinksText(link: string) {
 
-    return this.http.get(link, {responseType: 'text'});
+    return this.http.get(link, { responseType: 'text' });
   }
 
-  login(data:any){
-    return this.http.post(this.baseUrl + '/user/login',  data)
+  login(data: any) {
+    return this.http.post(this.baseUrl + '/user/login', data)
   }
 
   getAllInterests() {
     return this.http.get(this.baseUrl + '/interests/get-interests')
   }
 
-  signup(data:any){
-   return this.http.post(this.baseUrl + '/user/create-user', data)
+  signup(data: any) {
+    return this.http.post(this.baseUrl + '/user/create-user', data)
+  }
+
+  updateUser(data: any) {
+    return this.http.post(this.baseUrl + '/user/update-user', data)
+  }
+  updatePassword(data: any) {
+    return this.http.post(this.baseUrl + '/user/update-password', data)
+
   }
 }

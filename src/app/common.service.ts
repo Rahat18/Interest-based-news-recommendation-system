@@ -52,4 +52,8 @@ export class CommonService {
     return this.http.post(this.baseUrl + '/user/update-password', data)
 
   }
+
+  resetPassword(data: any) {
+    return this.http.post(this.baseUrl + '/user/forgot-password', data)
+  }
 }

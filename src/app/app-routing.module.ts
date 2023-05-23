@@ -7,6 +7,7 @@ import { SearchNewsComponent } from './pages/search-news/search-news.component';
 import { SingleContentComponent } from './pages/single-content/single-content.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { SignupComponent } from './signup/signup.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
       { path: 'search', component: SearchNewsComponent },
       { path: 'update-user', component: UpdateUserComponent },
 
-
+      { path: 'forgot-password', component: ForgotPasswordComponent },
     ],
   },
   { path: 'login', component: LoginComponent },
